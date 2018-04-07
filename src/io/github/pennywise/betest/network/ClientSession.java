@@ -45,7 +45,7 @@ public class ClientSession {
 		try {
 			this.socket.close();
 		} catch (IOException e) {
-			System.out.println("Erro ao fechar conexão do cliente > " + address.getHostAddress() + ".");
+			System.out.println("Error closing the client > " + address.getHostAddress() + ".");
 			e.printStackTrace();
 		}
 	}
