@@ -14,16 +14,16 @@ public class MasterServer {
 	
 	public static void main(String[] args) {
 		if (args.length <= 1) {
-			System.out.println("Por favor, defina o IP e a PORTA para o servidor.");
+			System.out.println("Please, specify an IP and a PORT to create a socket connection.");
 			System.exit(0);
 		} else {
 			String ip = args[0];
 			String stringPort = args[1];
-			// Verifica se a porta é um número inteiro.
+			// Verify whether the port is an integer or not.
 			if (!ArgsValidator.checkForInteger(stringPort)) {
-				System.out.println("A porta definida precisa ser um número inteiro!");
+				System.out.println("The defined port must be a integer!");
 			} else {
-				// Ok, tudo certo, vamos continuar.
+				// Ok, let's continue.
 				int port = Integer.parseInt(stringPort);
 				new MasterServer(ip, port);
 			}
@@ -48,11 +48,11 @@ public class MasterServer {
 			this.serverListener = new ServerListener(this);
 			this.serverListener.start();
 			API.setDefaultServer(this);
-			// Inicia todos os módulos necessários
+			// Initialize all the modules.
 			this.registry = new PacketRegistry();
 			this.clientManager = new ClientManager();
 		} catch (Exception e) {
-			System.out.println(String.format("Ocorreu um erro ao iniciar o servidor %s.", e));
+			System.out.println(String.format("An error has occurred in %s.", e));
 			System.exit(0);
 		}
 	}
@@ -78,9 +78,9 @@ public class MasterServer {
 	}
 	
 	public void kill() {
-		System.out.println("Fechando todas as conexões...");
+		System.out.println("Closing all connections...");
 		this.getClientManager().closeAll();
-		System.out.println("Desligando servidor...");
+		System.out.println("Turning the server off...");
 		this.serverListener.setRunning(false);
 		System.out.println("Goodbye.");
 		System.exit(0);
