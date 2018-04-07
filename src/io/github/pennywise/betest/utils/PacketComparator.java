@@ -6,7 +6,7 @@ import io.github.pennywise.betest.network.packets.Packet;
 
 public class PacketComparator implements Comparator<Packet> {
 
-	// Esta classe vê qual packet tem a maior prioridade
+	// Compare the priorities
 	
 	@Override
 	public int compare(Packet o1, Packet o2) {
