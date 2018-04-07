@@ -8,13 +8,13 @@ public class PingResponse extends Packet {
 
 	@Override
 	public void read(DataInputStream stream) throws IOException {
-		// O SERVIDOR NÃO aceita PING RESPONSE do CLIENTE, apenas o SERVIDOR pode mandar isto...
+		// The client doesn't send a PING_RESPONSE in this case.
 	}
 
 	@Override
 	public void write(DataOutputStream stream) throws IOException {
 		stream.writeLong(System.currentTimeMillis());
-		// Enviado o tempo do servidor para ele ver o tempo que demora entre o CLIENTE e o SERVIDOR!
+		// Send the time in millisseconds
 	}
 	
 	
