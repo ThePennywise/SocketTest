@@ -7,7 +7,7 @@ import io.github.pennywise.betest.network.packets.Packet;
 
 public class API {
 	
-	// Esta classe é uma API para as coisas funcionarem mais rápido.
+	// This is an API.
 	
 	private static MasterServer defaultServer;
 	
@@ -28,7 +28,7 @@ public class API {
         	Class<? extends Packet> packet = getRegistry().getPACKET(id);
         	return packet.newInstance();
         } catch (Exception ex) {
-        	System.out.println("Tentamos criar uma nova classe para a packet de id=" + id + ", porém, o erro " + ex.getClass().getSimpleName() + " foi gerado.");
+        	System.out.println("We tried to create a new class with the ID =" + id + ", although the error " + ex.getClass().getSimpleName() + " has been trown.");
         	return null;
         }
     }
