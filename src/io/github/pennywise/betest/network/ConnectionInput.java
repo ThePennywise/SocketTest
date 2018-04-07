@@ -37,9 +37,9 @@ public class ConnectionInput {
 				Packet packet = API.getNewPacketForID(id);
 				packet.read(stream);
 				client.receive(packet);
-				// Recebeu a packet, está tudo certo, recebendo-as!
+				// Received the packets
 				} catch (Exception ex) {
-					// Exceções não são importantes aqui...
+					// Exceptions are not important here...
 				}
 			}
 		}
