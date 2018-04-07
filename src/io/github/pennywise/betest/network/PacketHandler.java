@@ -4,7 +4,7 @@ import io.github.pennywise.betest.network.packets.Packet;
 
 public abstract class PacketHandler {
 	
-	// Recebe a packet
+	// Receive a packet
 	
 	public abstract void handle(Packet packet, ClientSession session);
 	
