@@ -39,19 +39,19 @@ public class ConnectionOutput {
 			stream.writeByte(packet.ID());
 			packet.write(stream);
 			} catch (Exception ex) {
-				// Achar exceções aqui não é necessário.
+				// Exceptions here are not important at all
 			}
 		}
 		
 	}
 	
-	// Adiciona na fila de packets...
+	// Add in the packet queue
 	public void send(Packet packet, int priority) {
 		packet.setPriority(priority);
 		this.queue.add(packet);
 	}
 	
-	// Mesma coisa...
+	// Same thing
 	public void send(Packet packet) {
 		this.queue.add(packet);
 	}
