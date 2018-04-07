@@ -15,7 +15,7 @@ public class PingRequest extends Packet {
 
 	@Override
 	public void write(DataOutputStream stream) throws IOException {
-		// O servidor não manda PING REQUEST, apenas o CLIENTE!
+		// The server doesn't send a PING_REQUEST in this case.
 	}
 
 }
