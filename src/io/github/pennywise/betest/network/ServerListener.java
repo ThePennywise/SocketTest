@@ -22,14 +22,14 @@ public class ServerListener extends Thread {
 				Socket socket = this.server.getServerSocket().accept();
 				ClientSession newClient = new ClientSession(socket);
 				if (API.getClientManager().isConnected(newClient)) {
-					// Tentou conectar duas vezes (BUG), para resolver, desconecte a nova sess„o
+					// Tried to connect twice
 					socket.close();
 					return;
 				}
-				// Adicionado! Recebendo novas conexıes e HandShake!
+				// Adding and starting handshake!
 				API.getClientManager().addClient(newClient);
 			} catch (IOException e) {
-				System.out.println("Ocorreu um erro ao aceitar uma conex„o!");
+				System.out.println("Ocorreu um erro ao aceitar uma conex√£o!");
 				e.printStackTrace();
 			}
 		}
