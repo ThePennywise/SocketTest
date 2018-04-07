@@ -29,7 +29,7 @@ public class ServerListener extends Thread {
 				// Adding and starting handshake!
 				API.getClientManager().addClient(newClient);
 			} catch (IOException e) {
-				System.out.println("Ocorreu um erro ao aceitar uma conexão!");
+				System.out.println("An error occurred");
 				e.printStackTrace();
 			}
 		}
